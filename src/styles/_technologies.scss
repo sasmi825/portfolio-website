@@ -1,0 +1,31 @@
+@import "variables";
+
+.technologies {
+  background: #C6C3CD;
+  padding: 7% 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .tech-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .tech-list {
+    flex: 1;
+    text-align: left;
+    max-width: 43%;
+
+    p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid black;
+      margin: 3% 0%;
+    }
+  }
+}

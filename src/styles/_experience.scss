@@ -1,0 +1,26 @@
+// src/styles/experience.scss
+.experience {
+    display: flex;
+    justify-content: space-between;
+    padding: 4rem 2rem;
+    background: #1a1a2e;
+    color: white;
+    text-align: center;
+  
+    .education, .work-experience {
+      width: 45%;
+    }
+  
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      
+    }
+  
+    p {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 0.5rem;
+    }
+  }
+  

@@ -1,0 +1,54 @@
+.projects {
+  text-align: center;
+  padding: 50px 0;
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .projects-carousel {
+    width: 100%;
+    padding: 20px 0;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: black; // Navigation arrows color
+  }
+
+  .swiper-pagination-bullet {
+    background: black;
+  }
+
+  .project-card {
+    background: #C1B580;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    height: 300px; // Set a fixed height
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; // Ensures spacing is even
+  
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+  
+    p {
+      margin-top:10%;
+      font-size: 0.9rem;
+      flex-grow: 1; // Ensures text expands evenly
+    }
+  
+    .project-link {
+      display: inline-block;
+      color: black;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
+}

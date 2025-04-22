@@ -1,0 +1,47 @@
+@import "variables";
+
+.hero {
+  background: #C5C2CC;
+  padding: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  .hero-content {
+    max-width: 50%;
+
+    .hero-title {
+      font-size: 42px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      line-height: 1.5;
+      font-family: $body-font;
+    }
+  }
+
+  .hero-image {
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      max-width: 300px; // Adjust as needed
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+}

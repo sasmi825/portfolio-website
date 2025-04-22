@@ -1,0 +1,22 @@
+// Colors
+$primary-color: #2e3545;
+$secondary-color: #e6e6e6;
+$accent-color: #c4bebe;
+$dark-color: #1E2130; // Adjust this based on your design
+$light-color: #EAEAEA; // Adjust based on your design
+$background-light: #F5F5F5; 
+
+// Fonts
+$font-primary:'Italiana', serif;
+$font-size-base: 16px;
+$font-family:'Italiana', serif;
+$heading-font: 'Italiana', serif;
+$body-font: 'Roboto', sans-serif;
+
+body {
+  font-family: $font-primary;
+  background-color: $secondary-color;
+  color: $primary-color;
+  margin: 0;
+  padding: 0;
+}

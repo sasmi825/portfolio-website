@@ -1,0 +1,32 @@
+@import "./variables";
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Inter:wght@300;400;600&display=swap');
+
+$heading-font: 'Italiana', serif;
+$body-font: 'Roboto', sans-serif;
+
+h1, h2, h3, .hero-title {
+  font-family: $heading-font;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #f5f5f7;
+  color: $primary-color;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p {
+  font-family: $body-font;
+}
