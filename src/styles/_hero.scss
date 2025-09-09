@@ -58,4 +58,9 @@
       margin-bottom: 20px;     /* Adds space between the stacked items */
     }
   }
+      @media (max-width: 425px) {
+      .hero-title{
+        padding: 10% 2% 2%;
+      }
+  }
 }
