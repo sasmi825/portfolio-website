@@ -57,6 +57,7 @@ const Projects: React.FC = () => {
       <div className="container">
         <h2 className="section-title">Projects</h2>
         <Swiper
+          
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={20}
           slidesPerView={1}
