@@ -1,0 +1,176 @@
+// _contactpage.scss
+
+.contact-page-wrapper {
+  background-color: #1a1a2e;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Italiana", serif;
+  color: white;
+}
+
+// You can remove .contact-page-container since we are no longer using it.
+
+main.main-content {
+  flex-grow: 1;
+}
+
+// --- Section 1: Hero/Introduction ---
+.hero-section {
+   // Dark blue/purple background
+  padding-top: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  gap: 4rem;
+ 
+
+  .hero-text-content {
+    flex: 1;
+    max-width: 50%;
+
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      line-height: 1.7;
+      opacity: 0.9;
+    }
+  }
+
+  .hero-image-wrapper {
+    flex: 1;
+    max-width: 40%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .hero-image {
+      width: 100%;
+      height: 70%;
+      display: block;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+  }
+}
+
+// --- Section 2: Contact/Say Hey ---
+.contact-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  gap: 4rem;
+
+  .contact-image-wrapper {
+    flex: 1;
+    max-width: 50%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .contact-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+  }
+
+  .contact-text-content {
+    flex: 1;
+    max-width: 50%;
+
+    p {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      line-height: 1.6;
+
+      .strikethrough-text {
+        text-decoration: line-through;
+        text-decoration-color: pink; // A muted gold/pink color
+        text-decoration-thickness: 2px; // Adjust for better visibility
+      }
+
+      a {
+        color: pink;
+        text-decoration: underline;
+        font-weight: 500;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #C1B580;
+        }
+      }
+    }
+  }
+}
+
+// --- Wave Divider ---
+.wave-divider {
+  display: block;
+  width: 100%;
+  height: 180px;
+  margin-top: -1px; // Ensures seamless connection
+}
+
+
+
+// --- Responsive Adjustments ---
+@media (max-width: 992px) {
+  .hero-section,
+  .contact-section {
+    flex-direction: column;
+    padding: 10% 2% 3%;
+    gap: 2.5rem;
+
+    .hero-text-content,
+    .hero-image-wrapper,
+    .contact-image-wrapper,
+    .contact-text-content {
+      max-width: 90%;
+      width: 100%;
+      padding: 10% 2% 3%;
+    }
+    
+    h1, p {
+      text-align: left;
+    }
+  }
+
+  .wave-divider {
+    height: 100px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-section,
+  .contact-section {
+    padding: 3rem 1rem;
+    gap: 1.5rem;
+
+    .hero-text-content,
+    .hero-image-wrapper,
+    .contact-image-wrapper,
+    .contact-text-content {
+      max-width: 100%;
+    }
+  }
+}

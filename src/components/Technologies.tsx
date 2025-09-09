@@ -6,11 +6,13 @@ const Technologies: React.FC = () => {
     <section className="technologies">
       <h2 className="tech-title">Technologies</h2>
       <div className="tech-list">
-        <p>JavaScript, TypeScript, React, Node, MongoDB, RestAPIs, Git</p>
+        <p><b><i>Programming & Web:</i></b> Python, JavaScript, TypeScript, React, Angular, Node, and REST APIs.</p>
         <hr />
-        <p>Python, HTML5, CSS3, SCSS, Redux, Angular, SASS, JQuery</p>
+        <p><b><i>Data & Analytics:</i></b> Python, SQL, Spark, Kafka, Hadoop, PyTorch, TensorFlow, PostgreSQL, MySQL, MongoDB, NoSQL, BigQuery, Apache Cassandra, Snowflake, Oracle, Redshift</p>
         <hr />
-        <p>MySQL, PL/SQL, Figma, Accessibility, WCAG, ADA, Jira, Azure</p>
+        <p><b><i>Cloud & DevOps:</i></b> Azure, AWS, GCP, Kubernetes, Docker, and Git.</p>
+        <hr />
+        <p><b><i>Tools & Other:</i></b> Figma, Jira, and expertise in Accessibility (WCAG, ADA).</p>
       </div>
     </section>
   );

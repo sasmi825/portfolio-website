@@ -14,7 +14,8 @@ const Experience: React.FC = () => {
       <div className="work-experience">
         <h2>3+ Years of Experience</h2>
         <p><strong>Software Engineer | Full-stack Developer</strong></p>
-        <p><strong>Full Stack Developer</strong> <i> – Lapse</i> </p>
+        <p><strong>Software Engineer</strong> <i> – Democracy Labs</i> </p>
+        <p><strong>Full Stack Engineer</strong> <i> – Lapse</i> </p>
         <p><strong>Software Engineer</strong> <i>– EPAM Systems</i></p>
       </div>
     </section>

@@ -1,4 +1,4 @@
-// src/styles/experience.scss
+// src/styles/_experience.scss
 .experience {
     display: flex;
     justify-content: space-between;
@@ -22,5 +22,17 @@
       line-height: 1.5;
       margin-bottom: 0.5rem;
     }
+
+    // --- New media query for mobile responsiveness ---
+    @media (max-width: 768px) {
+      flex-direction: column; /* Stacks the education and work experience sections */
+      
+      .education, .work-experience {
+        width: 100%; /* Makes each section take the full width */
+      }
+
+      .education {
+        margin-bottom: 4rem; /* Adds space between the stacked sections */
+      }
+    }
   }
-  

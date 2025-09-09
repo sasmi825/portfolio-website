@@ -62,4 +62,36 @@
       background-color: darken(black, 10%);
     }
   }
+
+  // --- Start of new media query for mobile responsiveness ---
+  .hamburger {
+    display: none; // Hidden by default
+    cursor: pointer;
+    font-size: 30px;
+    color: $primary-color;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none; // Hides the navigation links
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: $secondary-color;
+      text-align: center;
+      padding: 20px 0;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    // This is a class that you'll toggle with JavaScript to show the menu
+    .nav-links.active {
+      display: flex;
+    }
+
+    .hamburger {
+      display: block; // Shows the hamburger icon
+    }
+  }
 }

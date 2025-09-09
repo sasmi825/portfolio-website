@@ -5,13 +5,13 @@
   color: $light-color;
   padding: 5% 5%;
   display: flex;
-  align-items: center; // Centers items vertically
+  align-items: center;
   justify-content: center;
   gap: 20%;
 
   .contact-info {
     flex: 1;
-    text-align:left; // Centers heading and text
+    text-align: left;
     max-width: 400px;
 
     .section-title {
@@ -48,7 +48,7 @@
         padding: 10px;
         border: 1px solid $secondary-color;
         border-radius: 25px;
-        background: #C1B580; // Form field color
+        background: #C1B580;
         color: $dark-color;
         font-size: 16px;
       }
@@ -76,6 +76,26 @@
     &:hover {
       background: pink;
       color: $dark-color;
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+    gap: 0;
+
+    .contact-info, .contact-form {
+      // This is the key change to make them fill the width
+      text-align: center;
+      width: -webkit-fill-available;
+    }
+
+    .contact-info {
+      margin-bottom: 20px;
+    }
+
+    .contact-form .form-group {
+      text-align: left; // Keeps labels and inputs left-aligned for readability
     }
   }
 }

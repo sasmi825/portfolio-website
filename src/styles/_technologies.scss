@@ -15,7 +15,7 @@
   .tech-list {
     flex: 1;
     text-align: left;
-    max-width: 43%;
+    max-width: 59%;
 
     p {
       font-size: 16px;
@@ -26,6 +26,21 @@
       border: none;
       border-top: 1px solid black;
       margin: 3% 0%;
+    }
+  }
+
+// --- New media query for mobile responsiveness ---
+  @media (max-width: 768px) {
+    flex-direction: column; /* Stacks the title and list vertically */
+    text-align: center; /* Centers the content */
+
+    .tech-title {
+      margin-bottom: 20px; /* Adds space between the title and list */
+    }
+
+    .tech-list {
+      max-width: 100%; /* Allows the list to take full width */
+      text-align: left; /* Aligns the text back to the left for readability */
     }
   }
 }
