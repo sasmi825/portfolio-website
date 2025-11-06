@@ -10,7 +10,6 @@ const ContactPage: React.FC = () => {
   return (
     <div className="contact-page-wrapper">
       <main className="main-content">
-        {/* All your sections go here */}
         <section className="hero-section">
           <div className="hero-text-content">
             <h1>Developer & Designer</h1>
@@ -45,7 +44,7 @@ const ContactPage: React.FC = () => {
               </a>{" "}
               or view her <span className="strikethrough-text">boring details</span> full work experience on{" "}
               <a
-                href="https://www.linkedin.com/in/sasmipolu"
+                href="https://www.linkedin.com/in/sri-sasmi-polu-275137170/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="linkedin-link"

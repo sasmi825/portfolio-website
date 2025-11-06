@@ -63,7 +63,7 @@ const Contact: React.FC = () => {
             <input
               type="email"
               id="email"
-              name="email"            // Must match {{email}} in EmailJS templates
+              name="email"            
               placeholder="Enter your email address here."
               required
             />
@@ -73,7 +73,7 @@ const Contact: React.FC = () => {
             <label htmlFor="message">Message (required)</label>
             <textarea
               id="message"
-              name="message"          // Must match {{message}} in EmailJS templates
+              name="message"          
               placeholder="Write your message here."
               required
             ></textarea>

@@ -1,6 +1,6 @@
 // src/components/Footer.tsx
 import React from "react";
-import "../styles/_footer.scss"; // Ensure you have the styles
+import "../styles/_footer.scss"; 
 
 const Footer: React.FC = () => {
   return (

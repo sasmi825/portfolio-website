@@ -65,7 +65,6 @@ const Projects: React.FC = () => {
           pagination={{ clickable: true }}
           autoplay={{ delay: 4000, disableOnInteraction: false }}
           loop={true}
-          // The new prop is added here
           centeredSlides={true}
           breakpoints={{
             768: { slidesPerView: 2 },

@@ -1,6 +1,6 @@
 // src/components/Experience.tsx
 import React from "react";
-import "../styles/_experience.scss"; // Ensure you have the styles
+import "../styles/_experience.scss"; 
 
 const Experience: React.FC = () => {
   return (

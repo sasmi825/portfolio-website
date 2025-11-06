@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/_hero.scss";
-import profileimg from "../assets/profile.jpg"; // Correct way to import image
+import profileimg from "../assets/profile.jpg"; 
 
 const Hero: React.FC = () => {
   return (

@@ -28,7 +28,6 @@ const Header: React.FC = () => {
             <li><Link to="/contact" onClick={closeMenu}>Say Hey!</Link></li>
           </ul>
         </nav>
-        {/* Hamburger icon with a click handler */}
         <div className="hamburger" onClick={handleMenuClick}>
           &#9776;
         </div>
