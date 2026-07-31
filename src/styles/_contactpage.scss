@@ -1,181 +1,171 @@
-// _contactpage.scss
+@import "./variables";
 
 .contact-page-wrapper {
-  background-color: #1a1a2e;
+  background: $navy;
+  color: $text-light;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: "Italiana", serif;
-  color: white;
+
+  .main-content {
+    flex-grow: 1;
+  }
 }
 
-// You can remove .contact-page-container since we are no longer using it.
-
-main.main-content {
-  flex-grow: 1;
-}
-
-// --- Section 1: Hero/Introduction ---
-.hero-section {
-   // Dark blue/purple background
-  padding-top: 10%;
+.intro-section,
+.reach-out-section {
   display: flex;
   align-items: center;
-  justify-content: center;
-  max-width: 1400px;
+  gap: $gutter;
+  max-width: $max-width;
   width: 100%;
   margin: 0 auto;
-  gap: 4rem;
- 
+  padding: 80px $gutter;
+}
 
-  .hero-text-content {
+.intro-section {
+  .intro-text {
     flex: 1;
-    max-width: 50%;
 
     h1 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      margin-bottom: 1.5rem;
-      font-weight: 700;
+      font-family: $heading-font;
+      font-size: clamp(2.25rem, 5vw, 3.25rem);
+      color: $text-light;
+      margin-bottom: 20px;
     }
 
     p {
-      font-size: clamp(1rem, 2vw, 1.25rem);
-      line-height: 1.7;
-      opacity: 0.9;
+      font-size: 16px;
+      line-height: 1.8;
+      color: $text-secondary;
     }
   }
 
-  .hero-image-wrapper {
-    flex: 1;
-    max-width: 40%;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .intro-image {
+    flex-shrink: 0;
+    width: 340px;
 
-    .hero-image {
+    img {
       width: 100%;
-      height: 70%;
-      display: block;
+      height: 420px;
       object-fit: cover;
-      border-radius: 12px;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     }
   }
 }
 
-// --- Section 2: Contact/Say Hey ---
-.contact-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 2rem;
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  gap: 4rem;
+.reach-out-section {
+  padding-top: 0;
 
-  .contact-image-wrapper {
-    flex: 1;
-    max-width: 50%;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .reach-out-image {
+    flex-shrink: 0;
+    width: 380px;
 
-    .contact-image {
+    img {
       width: 100%;
-      height: auto;
-      display: block;
+      height: 280px;
       object-fit: cover;
-      border-radius: 12px;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     }
   }
 
-  .contact-text-content {
+  .reach-out-text {
     flex: 1;
-    max-width: 50%;
 
     p {
-      font-size: clamp(1rem, 2vw, 1.25rem);
-      line-height: 1.6;
+      font-size: 18px;
+      line-height: 1.8;
+      color: $text-secondary;
+    }
 
-      .strikethrough-text {
-        text-decoration: line-through;
-        text-decoration-color: pink; // A muted gold/pink color
-        text-decoration-thickness: 2px; // Adjust for better visibility
-      }
+    .strikethrough-text {
+      text-decoration: line-through;
+      text-decoration-color: $lavender;
+      text-decoration-thickness: 2px;
+    }
 
-      a {
-        color: pink;
-        text-decoration: underline;
-        font-weight: 500;
-        transition: color 0.3s ease;
+    a {
+      color: $lavender;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(196, 181, 212, 0.4);
+      transition: color 0.2s ease, border-color 0.2s ease;
 
-        &:hover {
-          color: #C1B580;
-        }
+      &:hover {
+        color: $gold;
+        border-color: $gold;
       }
     }
   }
 }
 
-// --- Wave Divider ---
+// The wave is the transition from the navy page into the footer, so it takes
+// its fill from `currentColor` — keep this matched to the footer below.
 .wave-divider {
   display: block;
   width: 100%;
-  height: 180px;
-  margin-top: -1px; // Ensures seamless connection
+  height: 140px;
+  margin-top: -1px;
+  color: $lavender-muted;
 }
 
+// This page closes on a light band instead of the navy-light footer the rest
+// of the site uses, so the footer's own colors are inverted here.
+.contact-page-wrapper .footer {
+  background: $lavender-muted;
+  border-top: 1px solid $card-border;
 
+  .footer-logo {
+    color: $navy;
+  }
 
-// --- Responsive Adjustments ---
-@media (max-width: 992px) {
-  .hero-section,
-  .contact-section {
+  .footer-info {
+    color: $text-primary;
+
+    a {
+      border-bottom: 1px solid rgba(30, 41, 59, 0.25);
+      transition: color 0.2s ease, border-color 0.2s ease;
+
+      &:hover {
+        color: $accent;
+        border-color: $accent;
+      }
+    }
+  }
+}
+
+@media (max-width: $bp-lg) {
+  .intro-section,
+  .reach-out-section {
     flex-direction: column;
-    padding: 10% 2% 3%;
-    gap: 2.5rem;
+    padding: 56px $gutter-md;
+    gap: 36px;
+  }
 
-    .hero-text-content,
-    .hero-image-wrapper,
-    .contact-image-wrapper,
-    .contact-text-content {
-      max-width: 90%;
-      width: 100%;
-      padding: 10% 2% 3%;
-    }
-    
-    h1, p {
-      text-align: left;
-    }
+  .reach-out-section {
+    flex-direction: column-reverse;
+    padding-top: 0;
+  }
+
+  .intro-section .intro-image,
+  .reach-out-section .reach-out-image {
+    width: 100%;
+    max-width: 380px;
   }
 
   .wave-divider {
-    height: 100px;
+    height: 90px;
   }
 }
 
-@media (max-width: 600px) {
-  .hero-section,
-  .contact-section {
-    padding: 3rem 1rem;
-    gap: 1.5rem;
-
-    .hero-text-content,
-    .hero-image-wrapper,
-    .contact-image-wrapper,
-    .contact-text-content {
-      max-width: 100%;
-    }
+@media (max-width: $bp-md) {
+  .intro-section,
+  .reach-out-section {
+    padding: 48px $gutter-sm;
   }
-}
-@media (max-width: 420px){
-  .hero-section{
-    padding: 20% 1% 3%;
+
+  .reach-out-section {
+    padding-top: 0;
   }
 }

@@ -1,46 +1,49 @@
-@import "variables";
+@import "./variables";
 
 .technologies {
-  background: #C6C3CD;
-  padding: 7% 5%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  background: $lavender-muted;
+  padding: 72px $gutter;
 
-  .tech-title {
-    font-size: 24px;
-    font-weight: bold;
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+    max-width: 900px;
+    margin: 0 auto;
   }
 
-  .tech-list {
-    flex: 1;
-    text-align: left;
-    max-width: 59%;
-
-    p {
-      font-size: 16px;
-      margin-bottom: 10px;
-    }
-
-    hr {
-      border: none;
-      border-top: 1px solid black;
-      margin: 3% 0%;
-    }
+  .tech-category h3 {
+    font-family: $body-font;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: $accent;
+    margin-bottom: 14px;
   }
 
-// --- New media query for mobile responsiveness ---
-  @media (max-width: 768px) {
-    flex-direction: column; /* Stacks the title and list vertically */
-    text-align: center; /* Centers the content */
+  .tech-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
 
-    .tech-title {
-      margin-bottom: 20px; /* Adds space between the title and list */
-    }
+  .tech-pill {
+    font-size: 13px;
+    font-weight: 500;
+    color: $text-primary;
+    background: #fff;
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: 1px solid $card-border;
+    white-space: nowrap;
+  }
 
-    .tech-list {
-      max-width: 100%; /* Allows the list to take full width */
-      text-align: left; /* Aligns the text back to the left for readability */
+  @media (max-width: $bp-md) {
+    padding: 56px $gutter-sm;
+
+    .tech-grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
     }
   }
 }

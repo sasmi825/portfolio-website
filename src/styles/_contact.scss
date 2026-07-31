@@ -1,101 +1,105 @@
-@import "variables";
+@import "./variables";
 
 .contact {
-  background: $dark-color;
-  color: $light-color;
-  padding: 5% 5%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20%;
+  background: $navy;
+  padding: 80px $gutter;
 
-  .contact-info {
-    flex: 1;
-    text-align: left;
-    max-width: 400px;
-
-    .section-title {
-      font-size: 50px;
-      margin-bottom: 10px;
-    }
-
-    .contact-text {
-      font-size: 16px;
-      margin-bottom: 30px;
-    }
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $gutter;
+    align-items: center;
   }
 
-  .contact-form {
-    flex: 1;
-    max-width: 450px;
+  .contact-title {
+    font-size: clamp(2rem, 4.5vw, 2.625rem);
+    color: $text-light;
+    margin-bottom: 16px;
+  }
+
+  .contact-text {
+    font-size: 16px;
+    line-height: 1.7;
+    color: $text-secondary;
+  }
+
+  .contact-form form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 16px;
+  }
 
-    .form-group {
-      text-align: left;
+  .form-group {
+    display: flex;
+    flex-direction: column;
 
-      label {
-        display: block;
-        font-size: 16px;
-        margin-top: 2%;
-        margin-bottom: 2%;
+    label {
+      font-size: 13px;
+      font-weight: 500;
+      color: $text-secondary;
+      margin-bottom: 6px;
+    }
+
+    input,
+    textarea {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 14px;
+      color: $text-light;
+      outline: none;
+      transition: border-color 0.2s ease;
+
+      &:focus {
+        border-color: $lavender;
       }
 
-      input,
-      textarea {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid $secondary-color;
-        border-radius: 25px;
-        background: #C1B580;
-        color: $dark-color;
-        font-size: 16px;
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.25);
       }
+    }
 
-      textarea {
-        resize: none;
-        height: 100px;
-      }
+    textarea {
+      min-height: 120px;
+      resize: vertical;
     }
   }
 
   .submit-button {
-    background: transparent;
-    margin-top: 2%;
-    color: pink;
-    padding: 8px 16px;
-    font-size: 16px;
-    border: 2px solid pink;
-    border-radius: 25px;
+    align-self: flex-start;
+    background: $lavender;
+    color: $navy;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
     cursor: pointer;
-    transition: 0.3s;
-    text-transform: uppercase;
-    font-weight: bold;
+    transition: opacity 0.2s ease;
 
     &:hover {
-      background: pink;
-      color: $dark-color;
+      opacity: 0.85;
+    }
+
+    &:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
     }
   }
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-    text-align: center;
-    gap: 0;
+  .status-message {
+    font-size: 13px;
+    color: $lavender;
+    margin-top: 4px;
+  }
 
-    .contact-info, .contact-form {
-      // This is the key change to make them fill the width
-      text-align: center;
-      width: -webkit-fill-available;
-    }
+  @media (max-width: $bp-md) {
+    padding: 56px $gutter-sm;
 
-    .contact-info {
-      margin-bottom: 20px;
-    }
-
-    .contact-form .form-group {
-      text-align: left; // Keeps labels and inputs left-aligned for readability
+    .container {
+      grid-template-columns: 1fr;
+      gap: 36px;
     }
   }
 }

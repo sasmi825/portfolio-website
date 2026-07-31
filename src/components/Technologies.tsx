@@ -1,18 +1,63 @@
 import React from "react";
-import "../styles/_technologies.scss";
+
+const techCategories = [
+  {
+    name: "Programming & Web",
+    items: [
+      "Python",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Angular",
+      "Node.js",
+      "REST APIs",
+    ],
+  },
+  {
+    name: "Data & Analytics",
+    items: [
+      "SQL",
+      "Spark",
+      "Kafka",
+      "Hadoop",
+      "PostgreSQL",
+      "MySQL",
+      "MongoDB",
+      "Redshift",
+      "Snowflake",
+      "BigQuery",
+      "Cassandra",
+      "PyTorch",
+      "TensorFlow",
+    ],
+  },
+  {
+    name: "Cloud & DevOps",
+    items: ["AWS", "Azure", "GCP", "Docker", "Kubernetes", "Git"],
+  },
+  {
+    name: "Tools & Other",
+    items: ["Figma", "Jira", "WCAG", "ADA"],
+  },
+];
 
 const Technologies: React.FC = () => {
   return (
     <section className="technologies">
-      <h2 className="tech-title">Technologies</h2>
-      <div className="tech-list">
-        <p><b><i>Programming & Web:</i></b> Python, JavaScript, TypeScript, React, Angular, Node, and REST APIs.</p>
-        <hr />
-        <p><b><i>Data & Analytics:</i></b> Python, SQL, Spark, Kafka, Hadoop, PyTorch, TensorFlow, PostgreSQL, MySQL, MongoDB, NoSQL, BigQuery, Apache Cassandra, Snowflake, Oracle, Redshift</p>
-        <hr />
-        <p><b><i>Cloud & DevOps:</i></b> Azure, AWS, GCP, Kubernetes, Docker, and Git.</p>
-        <hr />
-        <p><b><i>Tools & Other:</i></b> Figma, Jira, and expertise in Accessibility (WCAG, ADA).</p>
+      <h2 className="section-title">Technologies</h2>
+      <div className="tech-grid">
+        {techCategories.map((category) => (
+          <div className="tech-category" key={category.name}>
+            <h3>{category.name}</h3>
+            <div className="tech-pills">
+              {category.items.map((item) => (
+                <span className="tech-pill" key={item}>
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

@@ -1,10 +1,15 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import Home from "./pages/Home";
 import Header from "./components/Header";
 import ProjectsPage from "./pages/ProjectsPage";
-import "./styles/styles.scss";  
 import ContactPage from "./pages/ContactPage";
+import "./styles/styles.scss";
 
 const App: React.FC = () => {
   return (
@@ -13,7 +18,12 @@ const App: React.FC = () => {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/projectsPage" element={<ProjectsPage/>} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          {/* Old path, kept so existing links don't 404 */}
+          <Route
+            path="/projectsPage"
+            element={<Navigate to="/projects" replace />}
+          />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </main>

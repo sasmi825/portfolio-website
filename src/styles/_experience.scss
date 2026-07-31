@@ -1,38 +1,63 @@
-// src/styles/_experience.scss
-.experience {
-    display: flex;
-    justify-content: space-between;
-    padding: 4rem 2rem;
-    background: #1a1a2e;
-    color: white;
-    text-align: center;
-  
-    .education, .work-experience {
-      width: 45%;
-    }
-  
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      
-    }
-  
-    p {
-      font-size: 1rem;
-      line-height: 1.5;
-      margin-bottom: 0.5rem;
-    }
+@import "./variables";
 
-    // --- New media query for mobile responsiveness ---
-    @media (max-width: 768px) {
-      flex-direction: column; /* Stacks the education and work experience sections */
-      
-      .education, .work-experience {
-        width: 100%; /* Makes each section take the full width */
-      }
+.credentials {
+  background: $navy;
+  padding: 64px $gutter;
 
-      .education {
-        margin-bottom: 4rem; /* Adds space between the stacked sections */
-      }
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $gutter;
+  }
+
+  .cred-heading {
+    font-size: 28px;
+    color: $text-light;
+    margin-bottom: 28px;
+  }
+
+  .cred-item {
+    padding: 16px 0;
+    border-bottom: 1px solid $hairline;
+
+    &:last-child {
+      border-bottom: none;
     }
   }
+
+  .cred-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+  }
+
+  .cred-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: $text-light;
+  }
+
+  .cred-year {
+    font-size: 13px;
+    font-weight: 500;
+    color: $lavender;
+    white-space: nowrap;
+  }
+
+  .cred-org {
+    font-size: 13px;
+    font-style: italic;
+    color: $text-secondary;
+    margin-top: 4px;
+  }
+
+  @media (max-width: $bp-md) {
+    padding: 48px $gutter-sm;
+
+    .container {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+}

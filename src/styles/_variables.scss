@@ -1,22 +1,32 @@
-// Colors
-$primary-color: #2e3545;
-$secondary-color: #e6e6e6;
-$accent-color: #c4bebe;
-$dark-color: #1E2130; // Adjust this based on your design
-$light-color: #EAEAEA; // Adjust based on your design
-$background-light: #F5F5F5; 
+// ── Colors ────────────────────────────────────────────────
+$navy: #0f172a;
+$navy-light: #1e293b;
+$lavender: #c4b5d4;
+$lavender-bg: #e8e0f0;
+$lavender-muted: #f0ecf5;
+$warm-white: #faf8f6;
 
-// Fonts
-$font-primary:'Italiana', serif;
-$font-size-base: 16px;
-$font-family:'Italiana', serif;
-$heading-font: 'Italiana', serif;
-$body-font: 'Roboto', sans-serif;
+$text-primary: #1e293b;
+$text-secondary: #64748b;
+$text-light: #e2e8f0;
 
-body {
-  font-family: $font-primary;
-  background-color: $secondary-color;
-  color: $primary-color;
-  margin: 0;
-  padding: 0;
-}
+$accent: #8b6fb0;
+$accent-soft: rgba(139, 111, 176, 0.12);
+$gold: #c4a862;
+$card-border: rgba(30, 41, 59, 0.08);
+$hairline: rgba(255, 255, 255, 0.06);
+
+// ── Typography ────────────────────────────────────────────
+$heading-font: 'DM Serif Display', Georgia, serif;
+$body-font: 'Inter', system-ui, -apple-system, sans-serif;
+
+// ── Layout ────────────────────────────────────────────────
+$max-width: 1200px;
+$gutter: 64px;
+$gutter-md: 40px;
+$gutter-sm: 22px;
+
+// ── Breakpoints ───────────────────────────────────────────
+$bp-lg: 1024px;
+$bp-md: 768px;
+$bp-sm: 480px;

@@ -1,36 +1,45 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "../styles/_header.scss";
 
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleMenuClick = () => {
-    setMenuOpen(!menuOpen);
-  };
+  const closeMenu = () => setMenuOpen(false);
 
-
-  const closeMenu = () => {
-    setMenuOpen(false);
-  };
-
- return (
+  return (
     <header className="header">
       <div className="container">
-        <h1 className="logo">
-          <Link to="/">Sasmi</Link>
-        </h1>
+        <Link to="/" className="logo" onClick={closeMenu}>
+          Sasmi
+        </Link>
         <nav>
-          {/* Dynamically adds the 'active' class based on menuOpen state */}
           <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
-            <li><Link to="/" onClick={closeMenu}>About</Link></li>
-            <li><Link to="/projectspage" onClick={closeMenu}>Projects</Link></li>
-            <li><Link to="/contact" onClick={closeMenu}>Say Hey!</Link></li>
+            <li>
+              <Link to="/" onClick={closeMenu}>
+                About
+              </Link>
+            </li>
+            <li>
+              <Link to="/projects" onClick={closeMenu}>
+                Projects
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact" className="nav-cta" onClick={closeMenu}>
+                Say Hey!
+              </Link>
+            </li>
           </ul>
         </nav>
-        <div className="hamburger" onClick={handleMenuClick}>
+        <button
+          type="button"
+          className="hamburger"
+          aria-label="Toggle navigation"
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
           &#9776;
-        </div>
+        </button>
       </div>
     </header>
   );

@@ -1,66 +1,87 @@
-@import "variables";
+@import "./variables";
 
 .hero {
-  background: #C5C2CC;
-  padding: 10%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
+  padding: 80px $gutter 88px;
+  background: linear-gradient(
+    160deg,
+    $lavender-muted 0%,
+    $lavender-bg 60%,
+    $lavender-muted 100%
+  );
+
   .container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    width: 100%;
-    max-width: 1200px;
+    align-items: center;
+    gap: $gutter;
+    min-height: 400px;
   }
 
   .hero-content {
-    max-width: 50%;
+    max-width: 560px;
+  }
 
-    .hero-title {
-      font-size: 42px;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
+  .hero-title {
+    font-family: $heading-font;
+    font-size: clamp(2.25rem, 5vw, 3.25rem);
+    color: $navy;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
 
-    .hero-subtitle {
-      font-size: 18px;
-      line-height: 1.5;
-      font-family: $body-font;
-    }
+  .hero-subtitle {
+    font-size: 18px;
+    line-height: 1.7;
+    color: $text-secondary;
+    margin-bottom: 32px;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
   }
 
   .hero-image {
-    max-width: 50%;
-    display: flex;
-    justify-content: center;
+    flex-shrink: 0;
 
     img {
+      width: 340px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(139, 111, 176, 0.15);
+    }
+  }
+
+  @media (max-width: $bp-lg) {
+    .hero-image img {
+      width: 280px;
+      height: 340px;
+    }
+  }
+
+  @media (max-width: $bp-md) {
+    padding: 56px $gutter-sm 64px;
+
+    .container {
+      flex-direction: column-reverse;
+      text-align: center;
+      gap: 40px;
+    }
+
+    .hero-content {
+      max-width: 100%;
+    }
+
+    .hero-actions {
+      justify-content: center;
+    }
+
+    .hero-image img {
       width: 100%;
       max-width: 300px;
-      height: auto;
-      border-radius: 20px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      height: 340px;
     }
-  }
-
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .container {
-      flex-direction: column; /* Stacks items vertically */
-      text-align: center;      /* Centers text */
-    }
-
-    .hero-content, .hero-image {
-      padding: 10% 2% 2%;
-      max-width: 100%;       /* Allows content and image to take full width */
-      margin-bottom: 20px;     /* Adds space between the stacked items */
-    }
-  }
-      @media (max-width: 425px) {
-      .hero-title{
-        padding: 10% 2% 2%;
-      }
   }
 }

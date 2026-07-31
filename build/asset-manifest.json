@@ -1,18 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.11ceae7d.css",
-    "main.js": "/static/js/main.5bde1905.js",
+    "main.css": "/static/css/main.d67a887c.css",
+    "main.js": "/static/js/main.37d24fc0.js",
     "static/js/453.aac68abc.chunk.js": "/static/js/453.aac68abc.chunk.js",
     "static/media/picture1.jpg": "/static/media/picture1.7278f97c319755cc9a49.jpg",
+    "static/media/sams-kitchen.png": "/static/media/sams-kitchen.ef4d2808f99aa4c4863f.png",
+    "static/media/bloos-adventure.png": "/static/media/bloos-adventure.a865620f0484e2365dfb.png",
     "static/media/picture2.jpg": "/static/media/picture2.ec09b5f5cf2a3e154d3a.jpg",
+    "static/media/aws-de.png": "/static/media/aws-de.3c102cc32805c472bd18.png",
+    "static/media/stock-etl.png": "/static/media/stock-etl.db41f5c53d0b01dd97e2.png",
+    "static/media/student-assist.png": "/static/media/student-assist.e379cdf832e638904321.png",
+    "static/media/nlp-emotion.png": "/static/media/nlp-emotion.7fc6ba1549fbf5bf6767.png",
     "static/media/profile.jpg": "/static/media/profile.1a693eb1ed3a1e1b5c80.jpg",
     "index.html": "/index.html",
-    "main.11ceae7d.css.map": "/static/css/main.11ceae7d.css.map",
-    "main.5bde1905.js.map": "/static/js/main.5bde1905.js.map",
+    "main.d67a887c.css.map": "/static/css/main.d67a887c.css.map",
+    "main.37d24fc0.js.map": "/static/js/main.37d24fc0.js.map",
     "453.aac68abc.chunk.js.map": "/static/js/453.aac68abc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.11ceae7d.css",
-    "static/js/main.5bde1905.js"
+    "static/css/main.d67a887c.css",
+    "static/js/main.37d24fc0.js"
   ]
 }

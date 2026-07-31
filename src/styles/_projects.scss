@@ -1,115 +1,136 @@
-@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;600;700&display=swap');
-@import "variables";
+@import "./variables";
 
-.projects {
-  text-align: center;
-  padding: 50px 0;
-  background-color: $secondary-color;
+// ── Card grid, shared by the Projects section and the Projects page ──
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 
-  .section-title {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    font-family: 'Italiana', serif;
+  @media (max-width: $bp-lg) {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .projects-carousel {
-    width: 100%;
-    padding: 20px 0;
-  }
-
-  .swiper-button-prev,
-  .swiper-button-next {
-    color: black; // Navigation arrows color
-  }
-
-  .swiper-pagination-bullet {
-    background: black;
-  }
-
-  .project-card {
-    background: #c1b580;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: left;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    height: 300px;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
-
-    h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0;
-      font-family: 'Italiana', serif; /* Changed to Italiana */
-      font-weight: 600;
-    }
-
-    .subtitle {
-      font-size: 0.9rem;
-      margin-top: 5px;
-      margin-bottom: 15px; /* Increased bottom margin for spacing */
-      font-family: 'Poppins', sans-serif;
-      font-weight: 400;
-      opacity: 0.8;
-    }
-
-    p {
-      /* Removed the margin-top here as it was causing the large gap */
-      font-size: 0.9rem;
-      flex-grow: 1;
-      font-family: 'Poppins', sans-serif;
-      line-height: 1.5;
-      /* Apply multi-line ellipsis */
-      display: -webkit-box;
-      -webkit-line-clamp: 4;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      text-overflow: ellipsis; 
-      transition: all 0.3s ease;
-      margin-bottom: 15px; /* Added margin for spacing between paragraph and button */
-
-      /* Hide scrollbar by default */
-      &::-webkit-scrollbar {
-        width: 0.4em;
-      }
-      &::-webkit-scrollbar-track {
-        background: transparent;
-      }
-      &::-webkit-scrollbar-thumb {
-        background: transparent;
-        border-radius: 5px;
-      }
-    }
-
-    /* On hover, remove truncation and show scrollbar */
-    &:hover p {
-      -webkit-line-clamp: unset;
-      overflow-y: auto;
-      white-space: pre-wrap;
-
-      &::-webkit-scrollbar-thumb {
-        background: #888;
-      }
-    }
-
-    .project-link {
-      display: inline-block;
-      color: black;
-      font-weight: bold;
-      text-decoration: underline;
-    }
+  @media (max-width: $bp-md) {
+    grid-template-columns: 1fr;
   }
 }
-@media (max-width: 768px) {
-  .projects .project-card {
-    height: auto;
-    width: 70%;
-    
+
+.project-card {
+  background: #fff;
+  border: 1px solid $card-border;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
   }
-  .swiper-slide{
+
+  .card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    background: $navy;
+    flex-shrink: 0;
+  }
+
+  .card-body {
+    padding: 20px 22px 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .card-tag {
+    align-self: flex-start;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: $accent;
+    background: $accent-soft;
+    padding: 3px 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+
+  .card-title {
+    font-family: $heading-font;
+    font-size: 20px;
+    color: $navy;
+    margin-bottom: 8px;
+  }
+
+  .card-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: $text-secondary;
+    margin-bottom: 16px;
+    flex-grow: 1;
+
+    // Cards in a fixed-height row truncate; the Projects page shows it all
+    &.is-clamped {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+
+  .card-link {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: $navy;
+    transition: gap 0.2s ease;
+
+    &:hover {
+      gap: 10px;
+    }
+  }
+
+  .card-link-arrow {
+    font-size: 16px;
+    line-height: 1;
+  }
+}
+
+// ── Featured section on the home page ──
+.projects {
+  padding: 80px $gutter;
+  background: $warm-white;
+
+  .projects-footer {
     display: flex;
     justify-content: center;
+    margin-top: 40px;
+  }
+
+  .view-all-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: $navy;
+    padding: 12px 28px;
+    border: 1.5px solid $navy;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, color 0.2s ease, gap 0.2s ease;
+
+    &:hover {
+      background: $navy;
+      color: $text-light;
+      gap: 12px;
+    }
+  }
+
+  @media (max-width: $bp-md) {
+    padding: 56px $gutter-sm;
   }
 }

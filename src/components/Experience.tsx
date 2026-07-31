@@ -1,22 +1,66 @@
-// src/components/Experience.tsx
 import React from "react";
-import "../styles/_experience.scss"; 
+
+interface Credential {
+  title: string;
+  year: string;
+  org: string;
+}
+
+const education: Credential[] = [
+  {
+    title: "Masters in Computer Science",
+    year: "2023 – 2025",
+    org: "George Washington University",
+  },
+  {
+    title: "B.Tech in Computer Science & Engineering",
+    year: "2017 – 2021",
+    org: "Narayana Engineering College, JNTUA",
+  },
+];
+
+const experience: Credential[] = [
+  {
+    title: "Software Engineer",
+    year: "2025 – 2026",
+    org: "DemocracyLab",
+  },
+  {
+    title: "Full Stack Developer",
+    year: "2024",
+    org: "Lapse",
+  },
+  {
+    title: "Software Engineer",
+    year: "2021 – 2023",
+    org: "EPAM Systems",
+  },
+];
+
+const CredentialList: React.FC<{ heading: string; items: Credential[] }> = ({
+  heading,
+  items,
+}) => (
+  <div className="cred-section">
+    <h2 className="cred-heading">{heading}</h2>
+    {items.map((item) => (
+      <div className="cred-item" key={`${item.title}-${item.org}`}>
+        <div className="cred-row">
+          <span className="cred-title">{item.title}</span>
+          <span className="cred-year">{item.year}</span>
+        </div>
+        <div className="cred-org">{item.org}</div>
+      </div>
+    ))}
+  </div>
+);
 
 const Experience: React.FC = () => {
   return (
-    <section className="experience">
-      <div className="education">
-        <h2>Education</h2>
-        <p><strong>Masters in Computer Science</strong> <br /> <i> - George Washington University</i></p>
-        <p><strong>Bachelors in Computer Science And Engineering</strong> <br /> <i> - Narayana Engineering College, JNTUA </i></p>
-      </div>
-
-      <div className="work-experience">
-        <h2>3+ Years of Experience</h2>
-        <p><strong>Software Engineer | Full-stack Developer</strong></p>
-        <p><strong>Software Engineer</strong> <i> – Democracy Labs</i> </p>
-        <p><strong>Full Stack Engineer</strong> <i> – Lapse</i> </p>
-        <p><strong>Software Engineer</strong> <i>– EPAM Systems</i></p>
+    <section className="credentials" id="about">
+      <div className="container">
+        <CredentialList heading="Education" items={education} />
+        <CredentialList heading="3+ Years of Experience" items={experience} />
       </div>
     </section>
   );
