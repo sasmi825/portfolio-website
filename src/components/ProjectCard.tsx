@@ -21,17 +21,30 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, clamp = true }) => (
       <p className={clamp ? "card-desc is-clamped" : "card-desc"}>
         {project.description}
       </p>
-      <a
-        href={project.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="card-link"
-      >
-        View Project
-        <span className="card-link-arrow" aria-hidden="true">
-          →
-        </span>
-      </a>
+      <div className="card-links">
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="card-link"
+        >
+          {project.linkLabel ?? "View Project"}
+          <span className="card-link-arrow" aria-hidden="true">
+            →
+          </span>
+        </a>
+        {project.links?.map((link) => (
+          <a
+            key={link.url}
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="card-link is-secondary"
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
     </div>
   </article>
 );

@@ -4,17 +4,42 @@ import studentAssist from "../assets/projects/student-assist.png";
 import nlpEmotion from "../assets/projects/nlp-emotion.png";
 import stockEtl from "../assets/projects/stock-etl.png";
 import awsDe from "../assets/projects/aws-de.png";
+import jobMarketPulse from "../assets/projects/job-market-pulse.png";
+
+export interface ProjectLink {
+  label: string;
+  url: string;
+}
 
 export interface Project {
   title: string;
   tag: string;
   description: string;
+  /** Primary link — the one the card's arrow points at. */
   link: string;
+  /** Overrides the card's default "View Project" wording. */
+  linkLabel?: string;
+  /** Secondary links shown next to the primary one. */
+  links?: ProjectLink[];
   image: string;
   featured?: boolean;
 }
 
 const projects: Project[] = [
+  {
+    title: "Job Market Pulse",
+    tag: "Full Stack · Data",
+    description:
+      "A real-time job market analytics platform that scrapes 3,800+ live postings daily from 19 companies across two ATS platforms, extracts in-demand skills with a custom NLP pipeline, and visualizes salary trends, hiring volume, and skill demand on an interactive dashboard. Includes a resume-matching feature that scores your skills against real market demand. FastAPI · PostgreSQL · Next.js · Docker, deployed on Render and Vercel.",
+    link: "https://job-market-pulse-three.vercel.app",
+    linkLabel: "Live Dashboard",
+    links: [
+      { label: "API Docs", url: "https://job-market-pulse.onrender.com/docs" },
+      { label: "GitHub", url: "https://github.com/sasmi825/job-market-pulse" },
+    ],
+    image: jobMarketPulse,
+    featured: true,
+  },
   {
     title: "Stock Indicators ETL",
     tag: "Data Engineering",
@@ -31,7 +56,6 @@ const projects: Project[] = [
       "A collection of hands-on projects from the Udacity Data Engineering with AWS Nanodegree, showcasing skills in data modeling, cloud data warehousing, Spark, data lake strategies, and automated pipelines. Each project demonstrates practical application of modern data engineering techniques.",
     link: "https://github.com/sasmi825/Data_Engineering_AWS_Projects",
     image: awsDe,
-    featured: true,
   },
   {
     title: "Student Assist App",

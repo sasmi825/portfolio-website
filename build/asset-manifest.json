@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.d67a887c.css",
-    "main.js": "/static/js/main.37d24fc0.js",
+    "main.css": "/static/css/main.3c562899.css",
+    "main.js": "/static/js/main.b80baebb.js",
     "static/js/453.aac68abc.chunk.js": "/static/js/453.aac68abc.chunk.js",
     "static/media/picture1.jpg": "/static/media/picture1.7278f97c319755cc9a49.jpg",
     "static/media/sams-kitchen.png": "/static/media/sams-kitchen.ef4d2808f99aa4c4863f.png",
@@ -9,16 +9,17 @@
     "static/media/picture2.jpg": "/static/media/picture2.ec09b5f5cf2a3e154d3a.jpg",
     "static/media/aws-de.png": "/static/media/aws-de.3c102cc32805c472bd18.png",
     "static/media/stock-etl.png": "/static/media/stock-etl.db41f5c53d0b01dd97e2.png",
-    "static/media/student-assist.png": "/static/media/student-assist.e379cdf832e638904321.png",
-    "static/media/nlp-emotion.png": "/static/media/nlp-emotion.7fc6ba1549fbf5bf6767.png",
+    "static/media/student-assist.png": "/static/media/student-assist.3801c7e44d058913fcec.png",
     "static/media/profile.jpg": "/static/media/profile.1a693eb1ed3a1e1b5c80.jpg",
+    "static/media/nlp-emotion.png": "/static/media/nlp-emotion.a73584cabee85383e834.png",
+    "static/media/job-market-pulse.png": "/static/media/job-market-pulse.8b47936d028d3b989b88.png",
     "index.html": "/index.html",
-    "main.d67a887c.css.map": "/static/css/main.d67a887c.css.map",
-    "main.37d24fc0.js.map": "/static/js/main.37d24fc0.js.map",
+    "main.3c562899.css.map": "/static/css/main.3c562899.css.map",
+    "main.b80baebb.js.map": "/static/js/main.b80baebb.js.map",
     "453.aac68abc.chunk.js.map": "/static/js/453.aac68abc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d67a887c.css",
-    "static/js/main.37d24fc0.js"
+    "static/css/main.3c562899.css",
+    "static/js/main.b80baebb.js"
   ]
 }

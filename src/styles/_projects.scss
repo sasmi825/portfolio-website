@@ -79,8 +79,15 @@
     }
   }
 
+  // Most cards hold a single link; a few also list a live demo, docs, etc.
+  .card-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 18px;
+  }
+
   .card-link {
-    align-self: flex-start;
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -91,6 +98,19 @@
 
     &:hover {
       gap: 10px;
+    }
+
+    // Secondary links sit quieter than the primary one and skip the arrow
+    &.is-secondary {
+      font-weight: 500;
+      color: $text-secondary;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
+
+      &:hover {
+        color: $navy;
+        border-bottom-color: $navy;
+      }
     }
   }
 
